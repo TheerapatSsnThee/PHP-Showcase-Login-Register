@@ -1,0 +1,209 @@
+/* --- Style หรือ Css หน้า Login/Register --- */
+
+/*
+ * ใช้กับ: <body> ของหน้า login และ register
+ * หน้าที่: จัด layout ให้กล่อง login อยู่กลางหน้าจอแนวตั้งและแนวนอน
+*/
+.login-register-body {
+    background-color: #eef1f5; /* เปลี่ยนสีพื้นหลังให้ดูสบายตา */
+    font-family: 'IBM Plex Sans Thai', sans-serif; /* ใช้ฟอนต์ใหม่ */
+    min-height: 100vh; /* ความสูงเต็มหน้าจอ */
+    display: grid;
+    place-items: center; /* เทคนิคจัดให้อยู่กึ่งกลางสมบูรณ์ */
+}
+
+/*
+ * ใช้กับ: กล่องหลักที่ครอบทั้ง 2 ส่วน (รูปภาพ + ฟอร์ม)
+ * หน้าที่: สร้างการ์ดหลักขึ้นมา
+*/
+.auth-wrapper {
+    display: flex; /* จัด 2 ส่วนให้อยู่ในแนวนอน */
+    width: 900px;
+    height: 550px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* ทำให้ border-radius มีผลกับส่วนตกแต่ง */
+
+    /* ===== บรรทัดที่เพิ่มสำหรับ Animation ===== */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/*
+ * ใช้กับ: ส่วนตกแต่งด้านซ้าย
+ * หน้าที่: กำหนดสไตล์และพื้นหลัง
+*/
+.auth-decoration-section {
+    flex-basis: 45%; /* กำหนดความกว้าง 45% */
+    background: linear-gradient(135deg, #007bff, #3f51b5); /* ไล่โทนสีพื้นหลัง */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.decoration-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.decoration-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.logo-circle {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+
+/*
+ * ใช้กับ: ส่วนฟอร์มด้านขวา
+ * หน้าที่: จัดตำแหน่งฟอร์มให้อยู่กึ่งกลาง
+*/
+.auth-form-section {
+    flex-basis: 55%; /* กำหนดความกว้าง 55% */
+    display: grid;
+    place-items: center;
+    padding: 40px;
+}
+
+/*
+ * ปรับสไตล์ .form-container เดิมเล็กน้อย
+*/
+.auth-form-section .form-container {
+    width: 100%;
+    max-width: 350px;
+    box-shadow: none; /* เอาเงาเก่าออก */
+    padding: 0;
+    background: none;
+}
+
+.auth-form-section h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.auth-form-section .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form-section .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+/*
+ * ใช้กับ: กล่องที่ครอบ input และ icon
+*/
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon svg {
+    position: absolute; /* ทำให้ไอคอนลอยได้ */
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%); /* จัดให้อยู่กลางแนวตั้ง */
+    color: #999;
+}
+
+.auth-form-section .form-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* เพิ่ม padding ซ้ายสำหรับไอคอน */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form-section .form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); /* เพิ่มเงาฟุ้งๆ ตอน focus */
+}
+
+/*
+ * ปรับปุ่ม .btn ให้ทันสมัยขึ้น
+*/
+.auth-form-section .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #007bff, #3f51b5);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.auth-form-section .btn:hover {
+    filter: brightness(1.15); /* ทำให้ปุ่มสว่างขึ้นเมื่อเมาส์ชี้ */
+}
+
+/*
+ * สไตล์ลิงก์สลับหน้า (ไปหน้า Register/Login)
+*/
+.switch-form-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+.switch-form-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.switch-form-link a:hover {
+    text-decoration: underline;
+}
+
+/* ข้อความแจ้งเตือน */
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+/* ===== ส่วนที่เพิ่มใหม่สำหรับสร้าง Animation ===== */
+@keyframes fadeInUp {
+    /* --- จุดเริ่มต้นของ Animation --- */
+    from {
+        opacity: 0; /* เริ่มจากมองไม่เห็น */
+        transform: translateY(20px); /* เริ่มจากตำแหน่งที่ต่ำกว่าปกติ 20px */
+    }
+
+    /* --- จุดสิ้นสุดของ Animation --- */
+    to {
+        opacity: 1; /* สิ้นสุดที่มองเห็นชัดเจน */
+        transform: translateY(0); /* สิ้นสุดที่ตำแหน่งปกติ (ไม่เลื่อน) */
+    }
+}
